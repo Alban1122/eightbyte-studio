@@ -5,35 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations as tr, t, type Lang } from "@/lib/translations";
 
-function FlagGB({ size = 20 }: { size?: number }) {
-  const w = size;
-  const h = Math.round(size * 0.667);
-  return (
-    <svg width={w} height={h} viewBox="0 0 60 30" className="shrink-0 rounded-[2px] overflow-hidden">
-      <clipPath id="gb"><rect width="60" height="30" /></clipPath>
-      <g clipPath="url(#gb)">
-        <rect width="60" height="30" fill="#012169" />
-        <path d="M0 0L60 30M60 0L0 30" stroke="#fff" strokeWidth="6" />
-        <path d="M0 0L60 30" stroke="#C8102E" strokeWidth="2" transform="translate(0,-1)" />
-        <path d="M60 0L0 30" stroke="#C8102E" strokeWidth="2" transform="translate(0,1)" />
-        <path d="M30 0V30M0 15H60" stroke="#fff" strokeWidth="10" />
-        <path d="M30 0V30M0 15H60" stroke="#C8102E" strokeWidth="6" />
-      </g>
-    </svg>
-  );
-}
-
-function FlagAL({ size = 20 }: { size?: number }) {
-  const w = size;
-  const h = Math.round(size * 0.714);
-  return (
-    <svg width={w} height={h} viewBox="0 0 980 700" className="shrink-0 rounded-[2px] overflow-hidden">
-      <rect width="980" height="700" fill="#E41E20" />
-      <path d="M490 136.5c-8.1 24.6-18.4 50.7-34.3 70.6-14.7 18.4-35.3 30.5-58.3 36.3 7.3-13.1 17.4-24.9 17.4-41.8 0-10.6-6.3-19.7-16-25.8 16.2-3.5 28.4-11.2 35.6-24.2 4.5-8.2 4.4-19.4-1.4-29 14.5 7.2 30 19.5 38.4 22.4 3.1 1.1 6 1.7 8.6 1.7v-10.2h20v10.2c2.6 0 5.5-.6 8.6-1.7 8.4-2.9 23.9-15.2 38.4-22.4-5.8 9.6-5.9 20.8-1.4 29 7.2 13 19.4 20.7 35.6 24.2-9.7 6.1-16 15.2-16 25.8 0 16.9 10.1 28.7 17.4 41.8-23-5.8-43.6-17.9-58.3-36.3-15.9-19.9-26.2-46-34.3-70.6zm0 122.5c-8.1 24.6-18.4 50.7-34.3 70.6-14.7 18.4-35.3 30.5-58.3 36.3 7.3-13.1 17.4-24.9 17.4-41.8 0-10.6-6.3-19.7-16-25.8 16.2-3.5 28.4-11.2 35.6-24.2 4.5-8.2 4.4-19.4-1.4-29 14.5 7.2 30 19.5 38.4 22.4 3.1 1.1 6 1.7 8.6 1.7v-10.2h20v10.2c2.6 0 5.5-.6 8.6-1.7 8.4-2.9 23.9-15.2 38.4-22.4-5.8 9.6-5.9 20.8-1.4 29 7.2 13 19.4 20.7 35.6 24.2-9.7 6.1-16 15.2-16 25.8 0 16.9 10.1 28.7 17.4 41.8-23-5.8-43.6-17.9-58.3-36.3-15.9-19.9-26.2-46-34.3-70.6z" fill="#000" />
-    </svg>
-  );
-}
-
 function LanguageSwitcher({
   lang,
   setLang,
@@ -43,7 +14,8 @@ function LanguageSwitcher({
   setLang: (l: Lang) => void;
   compact?: boolean;
 }) {
-  const flagPx = compact ? 16 : 20;
+  const flagH = compact ? 12 : 14;
+  const flagW = compact ? 18 : 20;
   const textSize = compact ? "text-[10px]" : "text-[11px]";
 
   return (
@@ -57,7 +29,7 @@ function LanguageSwitcher({
             : "text-white/30 hover:text-white/60"
         }`}
       >
-        <FlagGB size={flagPx} />
+        <img src="/flags/gb.svg" alt="" width={flagW} height={flagH} className="shrink-0 rounded-[2px]" />
         EN
       </button>
       <span className="text-[10px] text-white/15">|</span>
@@ -70,7 +42,7 @@ function LanguageSwitcher({
             : "text-white/30 hover:text-white/60"
         }`}
       >
-        <FlagAL size={flagPx} />
+        <img src="/flags/al.svg" alt="" width={flagW} height={flagH} className="shrink-0 rounded-[2px]" />
         AL
       </button>
     </div>
