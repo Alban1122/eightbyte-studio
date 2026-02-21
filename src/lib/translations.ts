@@ -1,5 +1,9 @@
 export type Lang = "en" | "al";
 
+/** Add project names here as they are completed. The spots counter derives from this. */
+export const COMPLETED_PROJECTS = ["Farm 88"] as const;
+export const TOTAL_OFFER_SPOTS = 10;
+
 export const translations = {
   /* ─── Navigation ─── */
   nav: {
@@ -37,10 +41,6 @@ export const translations = {
     offerBanner: {
       en: "OFFER FOR THE FIRST 10 CLIENTS — Reduced prices to build our portfolio",
       al: "OFERT\u00CB P\u00CBR 10 KLIENT\u00CBT E PAR\u00CB — \u00c7mime t\u00eb reduktuara p\u00ebr t\u00eb nd\u00ebrtuar portfolio-n ton\u00eb",
-    },
-    spotsLeft: {
-      en: "8/10 spots taken",
-      al: "8/10 vende t\u00eb z\u00ebna",
     },
     card1: {
       badge: { en: "LIMITED OFFER", al: "OFERT\u00cb E KUFIZUAR" },
@@ -228,7 +228,6 @@ export const translations = {
       title: { en: "Space for your project", al: "Hapësirë për projektin tuaj" },
     },
     ctaPortfolio: { en: "VIEW FULL PORTFOLIO", al: "SHIKO PORTFOLIO TË PLOTË" },
-    spotsLeft: { en: "4/10 spots remaining for first clients", al: "4/10 vende të mbetura për klientët e parë" },
   },
 
   /* ─── Testimonials ─── */

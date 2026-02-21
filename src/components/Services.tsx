@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
 import { useLanguage } from "@/lib/LanguageContext";
-import { translations as tr, t } from "@/lib/translations";
+import { translations as tr, t, COMPLETED_PROJECTS, TOTAL_OFFER_SPOTS } from "@/lib/translations";
 
 const stagger: Variants = {
   hidden: {},
@@ -237,7 +237,8 @@ export default function Services() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-50" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-red-400" />
                 </span>
-                {t(tr.services.spotsLeft, lang)}
+                {TOTAL_OFFER_SPOTS - COMPLETED_PROJECTS.length}/{TOTAL_OFFER_SPOTS}{" "}
+                {lang === "en" ? "SPOTS AVAILABLE" : "VENDE TË DISPONUESHME"}
               </span>
             </div>
           </div>
