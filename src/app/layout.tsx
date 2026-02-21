@@ -18,22 +18,29 @@ const siteUrl = "https://eightbyte-studio.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Eight Byte Studio - Web Development & SEO Services in Tirana, Albania",
+  title: "Web Developer Tirana | Eight Byte Studio - Website Design & SEO Albania",
   description:
-    "Eight Byte Studio offers modern web development with SEO optimization for Albanian businesses. We build websites that rank on Google and bring customers. Based in Tirana. Eight Byte Studio ofron zhvillim web modern me optimizim SEO për biznese shqiptare.",
+    "Eight Byte Studio — web developer in Tirana offering modern website design and SEO optimization for Albanian businesses. Affordable websites for restaurants and small businesses that rank on Google. Zhvillim web dhe krijim faqesh interneti Tiranë — SEO Shqipëri.",
   keywords: [
-    "web development Tirana",
-    "web developer Albania",
-    "SEO Albania",
-    "website design Tirana",
-    "zhvillim web Shqipëri",
-    "Eight Byte Studio",
-    "web development services Albania",
-    "restaurant websites Albania",
     "web developer Tirana",
-    "web design Albania",
-    "faqe interneti Shqipëri",
-    "dizajn web Tiranë",
+    "web developer Tiranë",
+    "zhvillim web Shqipëri",
+    "website design Albania",
+    "SEO Albania",
+    "SEO Tiranë",
+    "restaurant website Albania",
+    "website për restorant",
+    "modern website design Tirana",
+    "small business website Albania",
+    "krijim faqesh interneti Tiranë",
+    "web development services Tirana",
+    "freelance web developer Albania",
+    "digital menu Albania",
+    "Google optimization Tirana",
+    "Eight Byte Studio",
+    "affordable website design Albania",
+    "website with SEO Albania",
+    "best web developer for restaurants Tirana",
   ],
   authors: [{ name: "Eight Byte Studio" }],
   creator: "Eight Byte Studio",
@@ -58,15 +65,15 @@ export const metadata: Metadata = {
     alternateLocale: "sq_AL",
     url: siteUrl,
     siteName: "Eight Byte Studio",
-    title: "Eight Byte Studio - Web Development & SEO Services in Tirana, Albania",
+    title: "Web Developer Tirana | Eight Byte Studio - Website Design & SEO Albania",
     description:
-      "Eight Byte Studio offers modern web development with SEO optimization for Albanian businesses. We build websites that rank on Google and bring customers.",
+      "Freelance web developer in Tirana. Modern website design with SEO for restaurants and small businesses in Albania. Affordable, Google-optimized websites.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eight Byte Studio - Web Development & SEO Services in Tirana, Albania",
+    title: "Web Developer Tirana | Eight Byte Studio - Website Design & SEO Albania",
     description:
-      "Modern web development with SEO optimization for Albanian businesses. Based in Tirana.",
+      "Freelance web developer in Tirana. Modern website design with SEO for restaurants and small businesses in Albania.",
     creator: "@eightbytestudio",
   },
   verification: {
@@ -83,7 +90,7 @@ const jsonLd = {
       name: "Eight Byte Studio",
       url: siteUrl,
       description:
-        "Professional web development and SEO services for Albanian businesses. Based in Tirana, Albania.",
+        "Freelance web developer in Tirana offering modern website design, SEO optimization, and digital menu solutions for restaurants and small businesses in Albania.",
       email: "albanmucaj22@gmail.com",
       telephone: "+355695232002",
       address: {
@@ -105,6 +112,9 @@ const jsonLd = {
         "Website Design",
         "SEO Optimization",
         "Restaurant Website Development",
+        "Digital Menu Design",
+        "Google Optimization",
+        "Small Business Website",
       ],
       knowsLanguage: ["en", "sq"],
       priceRange: "$$",
@@ -122,11 +132,11 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": `${siteUrl}/#webpage`,
       url: siteUrl,
-      name: "Eight Byte Studio - Web Development & SEO Services in Tirana, Albania",
+      name: "Web Developer Tirana | Eight Byte Studio - Website Design & SEO Albania",
       isPartOf: { "@id": `${siteUrl}/#website` },
       about: { "@id": `${siteUrl}/#organization` },
       description:
-        "Eight Byte Studio offers modern web development with SEO optimization for Albanian businesses.",
+        "Freelance web developer in Tirana. Affordable website design with SEO for restaurants and small businesses in Albania.",
       inLanguage: ["en", "sq"],
     },
     {
@@ -143,7 +153,7 @@ const jsonLd = {
             itemOffered: {
               "@type": "Service",
               name: "Basic Website",
-              description: "Professional single-page or multi-page website for businesses",
+              description: "Affordable website design for small businesses in Albania with Google optimization",
             },
           },
           {
@@ -151,7 +161,7 @@ const jsonLd = {
             itemOffered: {
               "@type": "Service",
               name: "Restaurant & Business Website",
-              description: "Custom website with menu systems, reservations, and SEO optimization",
+              description: "Restaurant website with digital menu, reservations, and SEO optimization in Tirana",
             },
           },
           {
@@ -159,7 +169,7 @@ const jsonLd = {
             itemOffered: {
               "@type": "Service",
               name: "Premium + Maintenance",
-              description: "Full-service web development with ongoing maintenance and SEO",
+              description: "Full-service web development with ongoing SEO maintenance and Google optimization in Tirana",
             },
           },
         ],

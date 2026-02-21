@@ -12,13 +12,13 @@ export const translations = {
 
   /* ─── Hero ─── */
   hero: {
-    badge: { en: "Based in Tirana, Albania", al: "Me bazë në Tiranë, Shqipëri" },
+    badge: { en: "Web Developer in Tirana, Albania", al: "Web Developer në Tiranë, Shqipëri" },
     headline1: { en: "Eight Byte", al: "Eight Byte" },
     headline2: { en: "Studio", al: "Studio" },
     tagline: { en: "We Build, You Grow", al: "Ndërtojmë, Rriteni" },
     description: {
-      en: "We craft modern, high-performance websites for Albanian businesses. From restaurants to startups, we transform your digital presence with precision and care.",
-      al: "Krijojmë website moderne dhe me performancë të lartë për biznese shqiptare. Nga restorantet tek startup-et, transformojmë prezencën tuaj digjitale me precizion dhe kujdes.",
+      en: "Modern website design and SEO optimization for Albanian businesses. From restaurant websites with digital menus to small business sites — we build affordable websites that rank on Google.",
+      al: "Krijim faqesh interneti moderne dhe optimizim SEO për biznese shqiptare. Nga website për restorant me meny digjitale tek faqe biznesi — ndërtojmë website të aksesueshme që renditen në Google.",
     },
     ctaPrimary: { en: "View Projects", al: "Shiko Projektet" },
     ctaSecondary: { en: "Contact Us", al: "Kontakto" },
@@ -28,11 +28,11 @@ export const translations = {
   /* ─── Services ─── */
   services: {
     label: { en: "Services", al: "Shërbimet" },
-    heading1: { en: "Our", al: "Shërbimet" },
+    heading1: { en: "Web Development", al: "Shërbimet" },
     heading2: { en: "Services", al: "Tona" },
     subheading: {
-      en: "Professional solutions for your business.",
-      al: "Zgjidhje profesionale për biznesin tuaj.",
+      en: "Affordable website design packages for small businesses and restaurants in Tirana. Every site includes SEO and Google optimization.",
+      al: "Paketa të aksesueshme dizajni web për biznese të vogla dhe restorante në Tiranë. Çdo faqe përfshin SEO dhe optimizim për Google.",
     },
     offerBanner: {
       en: "OFFER FOR THE FIRST 10 CLIENTS — Reduced prices to build our portfolio",
@@ -46,8 +46,8 @@ export const translations = {
       badge: { en: "LIMITED OFFER", al: "OFERT\u00cb E KUFIZUAR" },
       title: { en: "Basic Website", al: "Website Baz\u00eb" },
       description: {
-        en: "Perfect for small businesses wanting a professional online presence.",
-        al: "Perfekt p\u00ebr biznese t\u00eb vogla q\u00eb duan prezenc\u00eb online profesionale.",
+        en: "Affordable website design for small businesses in Albania wanting a professional online presence with Google optimization.",
+        al: "Dizajn web i aksesueshëm për biznese të vogla në Shqipëri që duan prezencë online profesionale me optimizim për Google.",
       },
       features: {
         en: [
@@ -70,10 +70,10 @@ export const translations = {
     card2: {
       badge: { en: "MOST POPULAR", al: "M\u00cb I POPULLARIZUAR" },
       badge2: { en: "OFFER 23% OFF", al: "OFERT\u00cb 23% ZBRITJE" },
-      title: { en: "Restaurant & Business Website", al: "Website p\u00ebr Restorant & Biznes" },
+      title: { en: "Restaurant & Business Website", al: "Website për Restorant & Biznes" },
       description: {
-        en: "Complete solution with digital menu, gallery and booking system.",
-        al: "Zgjidhje komplekse me meny digjitale, galeri dhe sistem rezervimesh.",
+        en: "Complete restaurant website with digital menu, gallery and booking system. The best solution for restaurants in Tirana.",
+        al: "Website komplet për restorant me meny digjitale, galeri dhe sistem rezervimesh. Zgjidhja më e mirë për restorante në Tiranë.",
       },
       features: {
         en: [
@@ -101,8 +101,8 @@ export const translations = {
       badge: { en: "PREMIUM OFFER", al: "OFERT\u00cb PREMIUM" },
       title: { en: "Premium + Maintenance", al: "Premium + Mir\u00ebmbajtje" },
       description: {
-        en: "Premium website plus monthly updates and ongoing support.",
-        al: "Website premium plus p\u00ebrdit\u00ebsime dhe mb\u00ebshtetje mujore.",
+        en: "Premium website with monthly SEO maintenance, content updates and ongoing Google optimization in Tirana.",
+        al: "Website premium me mirëmbajtje mujore SEO, përditësime përmbajtjeje dhe optimizim të vazhdueshëm për Google në Tiranë.",
       },
       features: {
         en: [
@@ -133,35 +133,35 @@ export const translations = {
     heading1: { en: "Why Choose", al: "Pse" },
     heading2: { en: "Us", al: "Eight Byte Studio?" },
     subheading: {
-      en: "What sets us apart from the rest.",
-      al: "Çfarë na dallon nga të tjerët.",
+      en: "What sets us apart as your web developer in Tirana.",
+      al: "Çfarë na dallon si web developer në Tiranë.",
     },
     card1: {
       title: { en: "Modern Design + SEO Strategy", al: "Dizajn Modern + Strategji SEO" },
       description: {
-        en: "We don't just build beautiful websites — we make sure customers can find you on Google. Every site is optimized for local search from day one.",
-        al: "Nuk ndërtojmë vetëm website të bukur — sigurojmë që klientët t'ju gjejnë në Google. Çdo faqe optimizohet për kërkim lokal që nga dita e parë.",
+        en: "We don't just build beautiful websites — we make sure customers find you on Google. Every site includes SEO and Google optimization from day one in Tirana.",
+        al: "Nuk ndërtojmë vetëm website të bukur — sigurojmë që klientët t'ju gjejnë në Google. Çdo faqe përfshin SEO dhe optimizim Google që nga dita e parë në Tiranë.",
       },
     },
     card2: {
       title: { en: "Proven Results", al: "Rezultate të Provuara" },
       description: {
-        en: "Our clients see measurable growth in visibility and customer inquiries. We track rankings, traffic, and provide monthly reports.",
-        al: "Klientët tanë shikojnë rritje të matshme në vizibilitet dhe pyetje nga klientë. Ne gjurmojmë pozicionet, trafikun dhe ofrojmë raporte mujore.",
+        en: "Our clients see measurable growth in visibility and customer inquiries. We track Google rankings, traffic, and provide monthly SEO reports.",
+        al: "Klientët tanë shikojnë rritje të matshme në vizibilitet dhe pyetje nga klientë. Ne gjurmojmë pozicionet në Google, trafikun dhe ofrojmë raporte mujore SEO.",
       },
     },
     card3: {
       title: { en: "Local Market Expert", al: "Ekspertë të Tregut Lokal" },
       description: {
-        en: "We understand the Albanian market. Bilingual optimization (Albanian + English) for maximum reach in local and international searches.",
-        al: "Ne kuptojmë tregun shqiptar. Optimizim dygjuhësh (shqip + anglisht) për hapje maksimale në kërkime lokale dhe ndërkombëtare.",
+        en: "We understand the Albanian market. Bilingual website optimization (Albanian + English) for maximum reach in local and international Google searches.",
+        al: "Ne kuptojmë tregun shqiptar. Optimizim dygjuhësh i faqeve (shqip + anglisht) për hapje maksimale në kërkime lokale dhe ndërkombëtare në Google.",
       },
     },
     card4: {
-      title: { en: "Transparent Pricing", al: "Çmime Transparente" },
+      title: { en: "Affordable & Transparent Pricing", al: "Çmime të Aksesueshme & Transparente" },
       description: {
-        en: "Clear packages with no hidden fees. One-time build + optional monthly SEO maintenance for continued growth.",
-        al: "Paketa të qarta pa tarifa të fshehura. Ndërtim një herë + mirëmbajtje mujore opsionale SEO për rritje të vazhdueshme.",
+        en: "Clear website design packages with no hidden fees. Affordable one-time build + optional monthly SEO maintenance for continued growth.",
+        al: "Paketa të qarta dizajni web pa tarifa të fshehura. Ndërtim i aksesueshëm një herë + mirëmbajtje mujore opsionale SEO për rritje të vazhdueshme.",
       },
     },
   },
@@ -171,14 +171,14 @@ export const translations = {
     label: { en: "Projects", al: "Projektet" },
     heading1: { en: "Our", al: "Projektet" },
     heading2: { en: "Work", al: "Tona" },
-    subheading: { en: "Work that delivers results.", al: "Punë që sjell rezultate." },
+    subheading: { en: "Real website design projects for businesses in Albania.", al: "Projekte reale dizajni web për biznese në Shqipëri." },
     farm88: {
       badge: { en: "RESTAURANT WEBSITE", al: "RESTORANT WEBSITE" },
       name: { en: "Farm 88", al: "Farm 88" },
       nameSuffix: { en: "Restaurant", al: "Restaurant" },
       description: {
-        en: "Modern website with digital menu, gallery, and SEO optimization for a luxury restaurant in Tirana. Premium design that reflects the quality of the business.",
-        al: "Website modern me meny digjitale, galeri, dhe SEO optimization për restorant luksoz në Tiranë. Dizajn premium që reflekton cilësinë e biznesit.",
+        en: "Restaurant website with digital menu, gallery, and Google SEO optimization for a luxury restaurant in Tirana. Modern website design that brings customers from search.",
+        al: "Website për restorant me meny digjitale, galeri, dhe optimizim SEO Google për restorant luksoz në Tiranë. Dizajn modern web që sjell klientë nga kërkimi.",
       },
       features: {
         en: [
@@ -261,8 +261,8 @@ export const translations = {
     heading1: { en: "Get in", al: "Na" },
     heading2: { en: "Touch", al: "Kontaktoni" },
     subheading: {
-      en: "Ready to start your project?",
-      al: "Gati për të filluar projektin tuaj?",
+      en: "Ready to start your project? Get a free consultation from a web developer in Tirana.",
+      al: "Gati për të filluar projektin tuaj? Merrni konsultim falas nga një web developer në Tiranë.",
     },
     location: {
       label: { en: "Location", al: "Vendndodhja" },

@@ -19,9 +19,9 @@ function CheckIcon() {
 }
 
 const screenshots = [
-  { src: "/projects/farm88/hero.png", alt: "Restaurant website design Albania - Farm 88 hero section by Eight Byte Studio", label: "Hero" },
-  { src: "/projects/farm88/menu.png", alt: "Modern web development portfolio - restaurant menu page design Tirana", label: "Menu" },
-  { src: "/projects/farm88/contact.png", alt: "Web development services Albania - restaurant website contact page", label: "Contact" },
+  { src: "/projects/farm88/hero.png", alt: "Restaurant website Albania - modern website design by web developer Tirana Eight Byte Studio", label: "Hero" },
+  { src: "/projects/farm88/menu.png", alt: "Digital menu Albania - restaurant website design with SEO optimization Tirana", label: "Menu" },
+  { src: "/projects/farm88/contact.png", alt: "Small business website Albania - restaurant contact page with Google optimization", label: "Contact" },
 ];
 
 function ScreenshotShowcase() {
@@ -120,7 +120,7 @@ function ScreenshotShowcase() {
             <div className="relative h-12 w-20 sm:h-14 sm:w-24">
               <Image
                 src={shot.src}
-                alt={`${shot.label} - web development portfolio Eight Byte Studio`}
+                alt={`${shot.label} - website design portfolio web developer Tirana`}
                 fill
                 className={`object-cover object-top transition-all duration-300 ${
                   i === current ? "brightness-100" : "brightness-50 group-hover:brightness-75"
