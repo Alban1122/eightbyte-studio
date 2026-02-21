@@ -9,15 +9,13 @@ const stagger: Variants = { hidden: {}, visible: { transition: { staggerChildren
 const fadeUp: Variants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } } };
 const fadeIn: Variants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 1, ease: "easeOut" } } };
 
-const STORAGE_KEY = "eightbyte-reviews";
-
 interface Review {
-  id: string;
+  id: number;
   name: string;
-  business: string;
+  company: string;
   rating: number;
   message: string;
-  date: string;
+  createdAt: string;
 }
 
 const inputClasses = "w-full bg-white/[0.03] border border-white/[0.08] px-5 py-3.5 text-[14px] font-light text-white placeholder:text-white/20 transition-all duration-300 focus:border-gold-400/30 focus:outline-none focus:ring-0 focus:bg-white/[0.05]";
@@ -88,9 +86,9 @@ function ReviewCard({ review }: { review: Review }) {
       <div className="mt-6 h-[1px] w-8 bg-white/[0.04]" />
       <div className="mt-5">
         <p className="text-[14px] font-light text-white/70">{review.name}</p>
-        <p className="mt-0.5 text-[12px] font-light text-white/30">{review.business}</p>
+        <p className="mt-0.5 text-[12px] font-light text-white/30">{review.company}</p>
       </div>
-      <p className="mt-3 text-[11px] font-light text-white/15">{new Date(review.date).toLocaleDateString()}</p>
+      <p className="mt-3 text-[11px] font-light text-white/15">{new Date(review.createdAt).toLocaleDateString()}</p>
     </motion.div>
   );
 }
@@ -99,31 +97,47 @@ function ReviewForm({ onSubmit }: { onSubmit: (review: Review) => void }) {
   const { lang } = useLanguage();
   const rv = tr.testimonials.reviews;
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [name, setName] = useState("");
-  const [business, setBusiness] = useState("");
+  const [company, setCompany] = useState("");
   const [rating, setRating] = useState(5);
   const [hoverRating, setHoverRating] = useState(0);
   const [message, setMessage] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const review: Review = {
-      id: Date.now().toString(),
-      name,
-      business,
-      rating,
-      message,
-      date: new Date().toISOString(),
-    };
-    onSubmit(review);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setName("");
-      setBusiness("");
-      setRating(5);
-      setMessage("");
-    }, 3000);
+    setError("");
+    setSubmitting(true);
+
+    try {
+      const res = await fetch("/api/reviews", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, company, rating, message, website }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Failed to submit review");
+      }
+
+      const review: Review = await res.json();
+      onSubmit(review);
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setName("");
+        setCompany("");
+        setRating(5);
+        setMessage("");
+      }, 3000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -167,11 +181,22 @@ function ReviewForm({ onSubmit }: { onSubmit: (review: Review) => void }) {
                   type="text"
                   placeholder={t(rv.businessField, lang)}
                   required
-                  value={business}
-                  onChange={(e) => setBusiness(e.target.value)}
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
                   className={inputClasses}
                 />
               </div>
+              {/* Honeypot — hidden from humans, bots fill it */}
+              <input
+                type="text"
+                name="website"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="absolute left-[-9999px] h-0 w-0 overflow-hidden opacity-0"
+              />
               <div className="flex items-center gap-3">
                 <span className="text-[13px] font-light text-white/30">{t(rv.ratingField, lang)}</span>
                 <StarSelector
@@ -190,11 +215,19 @@ function ReviewForm({ onSubmit }: { onSubmit: (review: Review) => void }) {
                 onChange={(e) => setMessage(e.target.value)}
                 className={`${inputClasses} resize-none`}
               />
+              {error && (
+                <p className="text-[13px] font-light text-red-400">{error}</p>
+              )}
               <button
                 type="submit"
-                className="group mt-2 flex w-full items-center justify-center gap-3 bg-gold-400 px-8 py-4 text-[13px] font-medium tracking-[0.1em] text-navy-950 uppercase transition-all duration-300 hover:bg-gold-300"
+                disabled={submitting}
+                className="group mt-2 flex w-full items-center justify-center gap-3 bg-gold-400 px-8 py-4 text-[13px] font-medium tracking-[0.1em] text-navy-950 uppercase transition-all duration-300 hover:bg-gold-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {t(rv.submit, lang)}
+                {submitting ? (
+                  <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-navy-950/30 border-t-navy-950" />
+                ) : (
+                  t(rv.submit, lang)
+                )}
               </button>
             </motion.form>
           )}
@@ -209,27 +242,23 @@ export default function Testimonials() {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
   const [reviews, setReviews] = useState<Review[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored) {
-        setReviews(JSON.parse(stored));
-      }
-    } catch {
-      // ignore parse errors
-    }
+    fetch("/api/reviews")
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data)) setReviews(data);
+      })
+      .catch(() => {
+        // silently fail — reviews just won't show
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   const handleNewReview = useCallback((review: Review) => {
-    setReviews((prev) => {
-      const updated = [review, ...prev];
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-      return updated;
-    });
+    setReviews((prev) => [review, ...prev]);
   }, []);
-
-  const sortedReviews = [...reviews].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden py-24 lg:py-32">
@@ -257,7 +286,11 @@ export default function Testimonials() {
         </div>
 
         <div className="mt-12">
-          {sortedReviews.length === 0 ? (
+          {loading ? (
+            <div className="flex justify-center py-8">
+              <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-white/10 border-t-gold-400/60" />
+            </div>
+          ) : reviews.length === 0 ? (
             <p className="text-center text-[14px] font-light text-white/25">{t(tr.testimonials.reviews.noReviews, lang)}</p>
           ) : (
             <motion.div
@@ -266,7 +299,7 @@ export default function Testimonials() {
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } } }}
               className="grid gap-4 md:grid-cols-2 lg:grid-cols-3"
             >
-              {sortedReviews.map((review) => (
+              {reviews.map((review) => (
                 <ReviewCard key={review.id} review={review} />
               ))}
             </motion.div>
