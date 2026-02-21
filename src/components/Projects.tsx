@@ -19,9 +19,9 @@ function CheckIcon() {
 }
 
 const screenshots = [
-  { src: "/projects/farm88/hero.png", alt: "Farm 88 Restaurant - Hero section", label: "Hero" },
-  { src: "/projects/farm88/menu.png", alt: "Farm 88 Restaurant - Menu section", label: "Menu" },
-  { src: "/projects/farm88/contact.png", alt: "Farm 88 Restaurant - Contact section", label: "Contact" },
+  { src: "/projects/farm88/hero.png", alt: "Restaurant website design Albania - Farm 88 hero section by Eight Byte Studio", label: "Hero" },
+  { src: "/projects/farm88/menu.png", alt: "Modern web development portfolio - restaurant menu page design Tirana", label: "Menu" },
+  { src: "/projects/farm88/contact.png", alt: "Web development services Albania - restaurant website contact page", label: "Contact" },
 ];
 
 function ScreenshotShowcase() {
@@ -82,6 +82,7 @@ function ScreenshotShowcase() {
                 className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 60vw"
                 priority={current === 0}
+                loading={current === 0 ? "eager" : "lazy"}
               />
             </motion.div>
           </AnimatePresence>
@@ -119,7 +120,7 @@ function ScreenshotShowcase() {
             <div className="relative h-12 w-20 sm:h-14 sm:w-24">
               <Image
                 src={shot.src}
-                alt={shot.label}
+                alt={`${shot.label} - web development portfolio Eight Byte Studio`}
                 fill
                 className={`object-cover object-top transition-all duration-300 ${
                   i === current ? "brightness-100" : "brightness-50 group-hover:brightness-75"

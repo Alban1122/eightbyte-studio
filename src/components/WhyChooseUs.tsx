@@ -121,7 +121,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden py-24 lg:py-32">
+    <section ref={sectionRef} id="rreth-nesh" className="relative overflow-hidden py-24 lg:py-32">
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-navy-950" />
         <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
