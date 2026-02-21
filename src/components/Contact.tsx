@@ -107,9 +107,9 @@ function ContactInfo() {
       </a>
       <div className="mt-8 flex items-center gap-4">
         <a href="https://instagram.com/albanmucaj_" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center border border-white/[0.08] text-white/30 transition-all duration-300 hover:border-white/15 hover:text-white/60"><InstagramIcon /></a>
-        <div className="flex h-10 w-10 items-center justify-center border border-white/[0.05] text-white/15">
+        <a href="https://www.linkedin.com/in/alban-mucaj-52ba1636b" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center border border-white/[0.08] text-white/30 transition-all duration-300 hover:border-white/15 hover:text-white/60">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
-        </div>
+        </a>
       </div>
     </div>
   );
