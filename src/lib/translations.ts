@@ -15,7 +15,7 @@ export const translations = {
     badge: { en: "Web Developer in Tirana, Albania", al: "Web Developer në Tiranë, Shqipëri" },
     headline1: { en: "Eight Byte", al: "Eight Byte" },
     headline2: { en: "Studio", al: "Studio" },
-    tagline: { en: "We Build, You Grow", al: "Ndërtojmë, Rriteni" },
+    tagline: { en: "We Build, You Grow", al: "Ne Ndërtojmë, Ju Rriteni" },
     description: {
       en: "Modern website design and SEO optimization for Albanian businesses. From restaurant websites with digital menus to small business sites — we build affordable websites that rank on Google.",
       al: "Krijim faqesh interneti moderne dhe optimizim SEO për biznese shqiptare. Nga website për restorant me meny digjitale tek faqe biznesi — ndërtojmë website të aksesueshme që renditen në Google.",

@@ -3,7 +3,50 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/lib/LanguageContext";
-import { translations as tr, t } from "@/lib/translations";
+import { translations as tr, t, type Lang } from "@/lib/translations";
+
+function LanguageSwitcher({
+  lang,
+  setLang,
+  compact = false,
+}: {
+  lang: Lang;
+  setLang: (l: Lang) => void;
+  compact?: boolean;
+}) {
+  const flagSize = compact ? "text-base" : "text-lg";
+  const textSize = compact ? "text-[10px]" : "text-[11px]";
+
+  return (
+    <div className="flex items-center gap-1">
+      <button
+        onClick={() => setLang("en")}
+        aria-label="Switch to English"
+        className={`flex items-center gap-1.5 rounded-sm px-2 py-1 ${textSize} font-medium tracking-[0.08em] uppercase transition-all duration-300 ${
+          lang === "en"
+            ? "bg-gold-400/10 text-gold-400"
+            : "text-white/30 hover:text-white/60"
+        }`}
+      >
+        <span className={`${flagSize} leading-none`}>&#x1F1EC;&#x1F1E7;</span>
+        EN
+      </button>
+      <span className="text-[10px] text-white/15">|</span>
+      <button
+        onClick={() => setLang("al")}
+        aria-label="Kalo në Shqip"
+        className={`flex items-center gap-1.5 rounded-sm px-2 py-1 ${textSize} font-medium tracking-[0.08em] uppercase transition-all duration-300 ${
+          lang === "al"
+            ? "bg-gold-400/10 text-gold-400"
+            : "text-white/30 hover:text-white/60"
+        }`}
+      >
+        <span className={`${flagSize} leading-none`}>&#x1F1E6;&#x1F1F1;</span>
+        AL
+      </button>
+    </div>
+  );
+}
 
 export default function Navbar() {
   const { lang, setLang } = useLanguage();
@@ -67,32 +110,7 @@ export default function Navbar() {
 
           <div className="h-4 w-[1px] bg-white/10" />
 
-          {/* Language switcher — prominent */}
-          <div className="flex items-center gap-1.5">
-            <button
-              onClick={() => setLang("en")}
-              className={`flex items-center gap-1.5 rounded-sm px-2 py-1 text-[11px] font-medium tracking-[0.08em] uppercase transition-all duration-300 ${
-                lang === "en"
-                  ? "bg-gold-400/10 text-gold-400"
-                  : "text-white/30 hover:text-white/60"
-              }`}
-            >
-              <span className="text-sm leading-none">&#x1F1EC;&#x1F1E7;</span>
-              EN
-            </button>
-            <span className="text-[10px] text-white/15">|</span>
-            <button
-              onClick={() => setLang("al")}
-              className={`flex items-center gap-1.5 rounded-sm px-2 py-1 text-[11px] font-medium tracking-[0.08em] uppercase transition-all duration-300 ${
-                lang === "al"
-                  ? "bg-gold-400/10 text-gold-400"
-                  : "text-white/30 hover:text-white/60"
-              }`}
-            >
-              <span className="text-sm leading-none">&#x1F1E6;&#x1F1F1;</span>
-              AL
-            </button>
-          </div>
+          <LanguageSwitcher lang={lang} setLang={setLang} />
 
           <a
             href="#kontakti"
@@ -104,32 +122,7 @@ export default function Navbar() {
 
         {/* Mobile: lang + hamburger */}
         <div className="flex items-center gap-3 md:hidden">
-          {/* Mobile language switcher */}
-          <div className="flex items-center gap-1">
-            <button
-              onClick={() => setLang("en")}
-              className={`flex items-center gap-1 px-1.5 py-1 text-[10px] font-medium tracking-[0.05em] uppercase transition-all duration-300 ${
-                lang === "en"
-                  ? "text-gold-400"
-                  : "text-white/25 hover:text-white/50"
-              }`}
-            >
-              <span className="text-xs leading-none">&#x1F1EC;&#x1F1E7;</span>
-              EN
-            </button>
-            <span className="text-[9px] text-white/15">|</span>
-            <button
-              onClick={() => setLang("al")}
-              className={`flex items-center gap-1 px-1.5 py-1 text-[10px] font-medium tracking-[0.05em] uppercase transition-all duration-300 ${
-                lang === "al"
-                  ? "text-gold-400"
-                  : "text-white/25 hover:text-white/50"
-              }`}
-            >
-              <span className="text-xs leading-none">&#x1F1E6;&#x1F1F1;</span>
-              AL
-            </button>
-          </div>
+          <LanguageSwitcher lang={lang} setLang={setLang} compact />
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
