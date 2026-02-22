@@ -270,6 +270,7 @@ export const translations = {
     whatsapp: { en: "WhatsApp", al: "WhatsApp" },
     email: { en: "Email", al: "Email" },
     instagram: { en: "Instagram", al: "Instagram" },
+    linkedin: { en: "LinkedIn", al: "LinkedIn" },
     available: {
       en: "Available for projects",
       al: "Disponibël për projekte",
