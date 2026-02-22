@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = "https://eightbyte-studio.vercel.app";
+  const siteUrl = "https://eightbyte.al";
 
   return [
     {

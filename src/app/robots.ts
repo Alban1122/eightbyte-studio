@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = "https://eightbyte-studio.vercel.app";
+  const siteUrl = "https://eightbyte.al";
 
   return {
     rules: [
