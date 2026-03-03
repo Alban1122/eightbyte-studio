@@ -22,12 +22,34 @@ function ContactForm() {
   const { lang } = useLanguage();
   const form = tr.contact.form;
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", projectType: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => { setSubmitted(false); setFormData({ name: "", email: "", phone: "", projectType: "", message: "" }); }, 4000);
+    setSending(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setSubmitted(true);
+      setTimeout(() => { setSubmitted(false); setFormData({ name: "", email: "", phone: "", projectType: "", message: "" }); }, 4000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send message");
+    } finally {
+      setSending(false);
+    }
   };
 
   const inputClasses = "w-full bg-white/[0.03] border border-white/[0.08] px-5 py-3.5 text-[14px] font-light text-white placeholder:text-white/20 transition-all duration-300 focus:border-gold-400/30 focus:outline-none focus:ring-0 focus:bg-white/[0.05]";
@@ -56,8 +78,9 @@ function ContactForm() {
               </select>
             </div>
             <textarea placeholder={t(form.message, lang)} required rows={5} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className={`${inputClasses} resize-none`} />
-            <button type="submit" className="group mt-2 flex w-full items-center justify-center gap-3 bg-gold-400 px-8 py-4 text-[13px] font-medium tracking-[0.1em] text-navy-950 uppercase transition-all duration-300 hover:bg-gold-300">
-              {t(form.submit, lang)}<SendIcon />
+            {error && <p className="text-[13px] font-light text-red-400">{error}</p>}
+            <button type="submit" disabled={sending} className="group mt-2 flex w-full items-center justify-center gap-3 bg-gold-400 px-8 py-4 text-[13px] font-medium tracking-[0.1em] text-navy-950 uppercase transition-all duration-300 hover:bg-gold-300 disabled:opacity-60 disabled:cursor-not-allowed">
+              {sending ? (lang === "al" ? "Duke dërguar..." : "Sending...") : t(form.submit, lang)}{!sending && <SendIcon />}
             </button>
           </motion.form>
         )}
