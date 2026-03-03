@@ -306,6 +306,17 @@ export const translations = {
     },
   },
 
+  /* ─── Cookie Consent ─── */
+  cookie: {
+    message: {
+      en: "We use cookies to analyze website traffic and improve your experience.",
+      al: "Ne përdorim cookies për të analizuar trafikun e faqes dhe përmirësuar përvojën tuaj.",
+    },
+    learnMore: { en: "Learn more", al: "Mëso më shumë" },
+    accept: { en: "Accept", al: "Prano" },
+    decline: { en: "Decline", al: "Refuzo" },
+  },
+
   /* ─── Footer ─── */
   footer: {
     copyright: {
