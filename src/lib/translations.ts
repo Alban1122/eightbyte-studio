@@ -312,6 +312,8 @@ export const translations = {
       en: "© 2024 Eight Byte Studio. All rights reserved.",
       al: "© 2024 Eight Byte Studio. Të gjitha të drejtat e rezervuara.",
     },
+    privacy: { en: "Privacy Policy", al: "Politika e Privatësisë" },
+    terms: { en: "Terms of Service", al: "Kushtet e Shërbimit" },
   },
 } as const;
 

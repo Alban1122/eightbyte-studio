@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations as tr, t } from "@/lib/translations";
 
@@ -18,7 +19,7 @@ export default function Footer() {
         <p className="text-[12px] font-light text-white/20">
           {t(tr.footer.copyright, lang)}
         </p>
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center justify-center gap-6">
           {footerLinks.map((link) => (
             <a
               key={link.href}
@@ -28,6 +29,19 @@ export default function Footer() {
               {link.label}
             </a>
           ))}
+          <span className="h-3 w-[1px] bg-white/10" />
+          <Link
+            href="/privacy-policy"
+            className="text-[11px] font-light tracking-[0.15em] text-white/25 uppercase transition-colors duration-300 hover:text-white/50"
+          >
+            {t(tr.footer.privacy, lang)}
+          </Link>
+          <Link
+            href="/terms-of-service"
+            className="text-[11px] font-light tracking-[0.15em] text-white/25 uppercase transition-colors duration-300 hover:text-white/50"
+          >
+            {t(tr.footer.terms, lang)}
+          </Link>
         </div>
         <div className="flex items-center gap-3">
           <a
