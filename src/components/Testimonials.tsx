@@ -37,6 +37,7 @@ function StarSelector({ rating, onRate, hoverRating, onHover, onLeave }: {
             type="button"
             onClick={() => onRate(star)}
             onMouseEnter={() => onHover(star)}
+            aria-label={`Rate ${star} star${star > 1 ? "s" : ""}`}
             className="transition-transform duration-150 hover:scale-110"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill={filled ? "#D4A853" : "none"} stroke={filled ? "#D4A853" : "currentColor"} strokeWidth="1.5" className={filled ? "" : "text-white/20"}>
@@ -88,7 +89,7 @@ function ReviewCard({ review }: { review: Review }) {
         <p className="text-[14px] font-light text-white/70">{review.name}</p>
         <p className="mt-0.5 text-[12px] font-light text-white/30">{review.company}</p>
       </div>
-      <p className="mt-3 text-[11px] font-light text-white/15">{new Date(review.createdAt).toLocaleDateString()}</p>
+      <p className="mt-3 text-[11px] font-light text-white/40">{new Date(review.createdAt).toLocaleDateString()}</p>
     </motion.div>
   );
 }
@@ -269,7 +270,7 @@ export default function Testimonials() {
       </div>
       <div className="mx-auto max-w-7xl px-8 lg:px-12">
         <motion.div initial="hidden" animate={isInView ? "visible" : "hidden"} variants={stagger} className="max-w-xl">
-          <motion.span variants={fadeUp} className="inline-flex items-center gap-2.5 text-[13px] font-light tracking-[0.2em] text-white/30 uppercase">
+          <motion.span variants={fadeUp} className="inline-flex items-center gap-2.5 text-[13px] font-light tracking-[0.2em] text-white/40 uppercase">
             <span className="inline-block h-[1px] w-5 bg-gold-400/50" />
             {t(tr.testimonials.label, lang)}
           </motion.span>

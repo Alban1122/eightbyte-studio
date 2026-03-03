@@ -71,7 +71,7 @@ export default function CookieConsent() {
                   href="/privacy-policy"
                   className="text-gold-400 underline underline-offset-2 transition-colors duration-300 hover:text-gold-300"
                 >
-                  {t(tr.cookie.learnMore, lang)}
+                  {t(tr.footer.privacy, lang)}
                 </Link>
               </p>
               <div className="flex shrink-0 items-center gap-3">

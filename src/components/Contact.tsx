@@ -72,7 +72,7 @@ function ContactForm() {
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <input type="tel" placeholder={t(form.phone, lang)} value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className={inputClasses} />
-              <select value={formData.projectType} onChange={(e) => setFormData({ ...formData, projectType: e.target.value })} className={`${inputClasses} appearance-none bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='rgba(255,255,255,0.3)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")] bg-[length:12px] bg-[right_16px_center] bg-no-repeat ${!formData.projectType ? "text-white/20" : ""}`}>
+              <select aria-label={t(form.projectType, lang)} value={formData.projectType} onChange={(e) => setFormData({ ...formData, projectType: e.target.value })} className={`${inputClasses} appearance-none bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='rgba(255,255,255,0.3)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")] bg-[length:12px] bg-[right_16px_center] bg-no-repeat ${!formData.projectType ? "text-white/20" : ""}`}>
                 <option value="" className="bg-navy-900 text-white/40">{t(form.projectType, lang)}</option>
                 {options.map((opt, i) => (<option key={i} value={opt} className="bg-navy-900 text-white">{opt}</option>))}
               </select>
@@ -107,7 +107,7 @@ function ContactInfo() {
             <div className="flex items-start gap-4">
               <div className="mt-0.5 text-gold-400/60">{item.icon}</div>
               <div>
-                <p className="text-[11px] font-light tracking-[0.15em] text-white/25 uppercase">{item.label}</p>
+                <p className="text-[11px] font-light tracking-[0.15em] text-white/40 uppercase">{item.label}</p>
                 <p className="mt-1 text-[14px] font-light text-white/60 transition-colors duration-300 group-hover:text-white">{item.value}</p>
               </div>
             </div>
@@ -131,8 +131,8 @@ function ContactInfo() {
         {t(tr.contact.whatsappCta, lang)}
       </a>
       <div className="mt-8 flex items-center gap-4">
-        <a href="https://instagram.com/albanmucaj_" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center border border-white/[0.08] text-white/30 transition-all duration-300 hover:border-white/15 hover:text-white/60"><InstagramIcon /></a>
-        <a href="https://www.linkedin.com/in/alban-mucaj-52ba1636b" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center border border-white/[0.08] text-white/30 transition-all duration-300 hover:border-white/15 hover:text-white/60">
+        <a href="https://instagram.com/albanmucaj_" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center border border-white/[0.08] text-white/30 transition-all duration-300 hover:border-white/15 hover:text-white/60"><InstagramIcon /></a>
+        <a href="https://www.linkedin.com/in/alban-mucaj-52ba1636b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center border border-white/[0.08] text-white/30 transition-all duration-300 hover:border-white/15 hover:text-white/60">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
         </a>
       </div>
@@ -156,7 +156,7 @@ export default function Contact() {
       </div>
       <div className="mx-auto max-w-7xl px-8 lg:px-12">
         <motion.div initial="hidden" animate={isInView ? "visible" : "hidden"} variants={stagger} className="max-w-xl">
-          <motion.span variants={fadeUp} className="inline-flex items-center gap-2.5 text-[13px] font-light tracking-[0.2em] text-white/30 uppercase">
+          <motion.span variants={fadeUp} className="inline-flex items-center gap-2.5 text-[13px] font-light tracking-[0.2em] text-white/40 uppercase">
             <span className="inline-block h-[1px] w-5 bg-gold-400/50" />
             {t(tr.contact.label, lang)}
           </motion.span>

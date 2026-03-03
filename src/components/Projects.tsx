@@ -111,6 +111,7 @@ function ScreenshotShowcase() {
           <button
             key={shot.src}
             onClick={() => setCurrent(i)}
+            aria-label={`View ${shot.label} screenshot`}
             className={`group relative overflow-hidden rounded-lg border transition-all duration-300 ${
               i === current
                 ? "border-gold-400/40 shadow-lg shadow-gold-400/10"
@@ -193,7 +194,7 @@ export default function Projects() {
       <div className="mx-auto max-w-7xl px-8 lg:px-12">
         {/* Header */}
         <motion.div initial="hidden" animate={isInView ? "visible" : "hidden"} variants={stagger} className="max-w-xl">
-          <motion.span variants={fadeUp} className="inline-flex items-center gap-2.5 text-[13px] font-light tracking-[0.2em] text-white/30 uppercase">
+          <motion.span variants={fadeUp} className="inline-flex items-center gap-2.5 text-[13px] font-light tracking-[0.2em] text-white/40 uppercase">
             <span className="inline-block h-[1px] w-5 bg-gold-400/50" />
             {t(tr.projects.label, lang)}
           </motion.span>
@@ -272,7 +273,7 @@ export default function Projects() {
             {stats.map((stat, i) => (
               <div key={stat.label} className={`flex flex-col gap-1 px-8 py-6 sm:px-10 ${i < 3 ? "border-b border-r border-white/[0.06] sm:border-b-0" : "border-b border-white/[0.06] sm:border-b-0"}`}>
                 <span className="text-xl font-light text-gold-400/80">{stat.value}</span>
-                <span className="text-[11px] font-light text-white/25">{stat.label}</span>
+                <span className="text-[11px] font-light text-white/40">{stat.label}</span>
               </div>
             ))}
           </motion.div>

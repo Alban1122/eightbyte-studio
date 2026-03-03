@@ -203,7 +203,7 @@ export default function Services() {
       </div>
       <div className="mx-auto max-w-7xl px-8 lg:px-12">
         <motion.div initial="hidden" animate={isInView ? "visible" : "hidden"} variants={stagger} className="max-w-xl">
-          <motion.span variants={fadeUp} className="inline-flex items-center gap-2.5 text-[13px] font-light tracking-[0.2em] text-white/30 uppercase">
+          <motion.span variants={fadeUp} className="inline-flex items-center gap-2.5 text-[13px] font-light tracking-[0.2em] text-white/40 uppercase">
             <span className="inline-block h-[1px] w-5 bg-gold-400/50" />
             {t(tr.services.label, lang)}
           </motion.span>

@@ -100,7 +100,7 @@ export default function TermsOfServiceContent() {
           <h1 className="mb-2 text-3xl font-light tracking-tight text-white sm:text-4xl">
             {tx(content.title, lang)}
           </h1>
-          <p className="mb-12 text-[13px] font-light text-white/30">
+          <p className="mb-12 text-[13px] font-light text-white/40">
             {tx(content.lastUpdated, lang)}
           </p>
           <p className="mb-12 text-[15px] font-light leading-[1.8] text-white/40">

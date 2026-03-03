@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <footer className="relative border-t border-white/[0.06] bg-navy-950">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-8 py-10 sm:flex-row sm:justify-between lg:px-12">
-        <p className="text-[12px] font-light text-white/20">
+        <p className="text-[12px] font-light text-white/40">
           {t(tr.footer.copyright, lang)}
         </p>
         <div className="flex flex-wrap items-center justify-center gap-6">
@@ -24,7 +24,7 @@ export default function Footer() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[11px] font-light tracking-[0.15em] text-white/25 uppercase transition-colors duration-300 hover:text-white/50"
+              className="text-[11px] font-light tracking-[0.15em] text-white/40 uppercase transition-colors duration-300 hover:text-white/60"
             >
               {link.label}
             </a>
@@ -32,13 +32,13 @@ export default function Footer() {
           <span className="h-3 w-[1px] bg-white/10" />
           <Link
             href="/privacy-policy"
-            className="text-[11px] font-light tracking-[0.15em] text-white/25 uppercase transition-colors duration-300 hover:text-white/50"
+            className="text-[11px] font-light tracking-[0.15em] text-white/40 uppercase transition-colors duration-300 hover:text-white/60"
           >
             {t(tr.footer.privacy, lang)}
           </Link>
           <Link
             href="/terms-of-service"
-            className="text-[11px] font-light tracking-[0.15em] text-white/25 uppercase transition-colors duration-300 hover:text-white/50"
+            className="text-[11px] font-light tracking-[0.15em] text-white/40 uppercase transition-colors duration-300 hover:text-white/60"
           >
             {t(tr.footer.terms, lang)}
           </Link>
@@ -48,7 +48,8 @@ export default function Footer() {
             href="https://instagram.com/albanmucaj_"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/20 transition-colors duration-300 hover:text-white/40"
+            aria-label="Instagram"
+            className="text-white/40 transition-colors duration-300 hover:text-white/60"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
@@ -60,7 +61,8 @@ export default function Footer() {
             href="https://www.linkedin.com/in/alban-mucaj-52ba1636b"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/20 transition-colors duration-300 hover:text-white/40"
+            aria-label="LinkedIn"
+            className="text-white/40 transition-colors duration-300 hover:text-white/60"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
