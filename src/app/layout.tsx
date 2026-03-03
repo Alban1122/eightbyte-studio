@@ -68,13 +68,13 @@ export const metadata: Metadata = {
     siteName: "Eight Byte Studio",
     title: "Eight Byte Studio | Web Development Agency Albania",
     description:
-      "Eight Byte Studio is a professional web development agency based in Tirana, Albania. We build modern websites, e-commerce stores, and SEO-optimized web solutions.",
+      "Eight Byte Studio is a web development agency in Tirana, Albania. We build modern websites, e-commerce stores and SEO solutions.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Eight Byte Studio | Web Development Agency Albania",
     description:
-      "Eight Byte Studio is a professional web development agency based in Tirana, Albania. We build modern websites, e-commerce stores, and SEO-optimized web solutions.",
+      "Eight Byte Studio is a web development agency in Tirana, Albania. We build modern websites, e-commerce stores and SEO solutions.",
     creator: "@eightbytestudio",
   },
   verification: {
