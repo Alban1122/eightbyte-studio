@@ -66,15 +66,15 @@ export const metadata: Metadata = {
     alternateLocale: "sq_AL",
     url: siteUrl,
     siteName: "Eight Byte Studio",
-    title: "Web Developer Tirana | Eight Byte Studio - Website Design & SEO Albania",
+    title: "Eight Byte Studio",
     description:
-      "Freelance web developer in Tirana. Modern website design with SEO for restaurants and small businesses in Albania. Affordable, Google-optimized websites.",
+      "Professional web development agency based in Tirana, Albania",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Developer Tirana | Eight Byte Studio - Website Design & SEO Albania",
+    title: "Eight Byte Studio",
     description:
-      "Freelance web developer in Tirana. Modern website design with SEO for restaurants and small businesses in Albania.",
+      "Professional web development agency based in Tirana, Albania",
     creator: "@eightbytestudio",
   },
   verification: {
