@@ -92,7 +92,7 @@ const jsonLd = {
       url: siteUrl,
       description:
         "Freelance web developer in Tirana offering modern website design, SEO optimization, and digital menu solutions for restaurants and small businesses in Albania.",
-      email: "albanmucaj22@gmail.com",
+      email: "alban@eightbyte.al",
       telephone: "+355695232002",
       address: {
         "@type": "PostalAddress",

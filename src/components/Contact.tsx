@@ -94,7 +94,7 @@ function ContactInfo() {
   const contacts = [
     { icon: <LocationIcon />, label: t(tr.contact.location.label, lang), value: t(tr.contact.location.value, lang) },
     { icon: <PhoneIcon />, label: t(tr.contact.whatsapp, lang), value: "+355 69 523 2002", href: "https://wa.me/355695232002" },
-    { icon: <EmailIcon />, label: t(tr.contact.email, lang), value: "albanmucaj22@gmail.com", href: "mailto:albanmucaj22@gmail.com" },
+    { icon: <EmailIcon />, label: t(tr.contact.email, lang), value: "alban@eightbyte.al", href: "mailto:alban@eightbyte.al" },
     { icon: <InstagramIcon />, label: t(tr.contact.instagram, lang), value: "@albanmucaj_", href: "https://instagram.com/albanmucaj_" },
     { icon: <LinkedInIcon />, label: t(tr.contact.linkedin, lang), value: "Alban Mucaj", href: "https://www.linkedin.com/in/alban-mucaj-52ba1636b" },
   ];
