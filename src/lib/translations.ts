@@ -1,7 +1,7 @@
 export type Lang = "en" | "al";
 
 /** Add project names here as they are completed. The spots counter derives from this. */
-export const COMPLETED_PROJECTS = ["Farm 88"] as const;
+export const COMPLETED_PROJECTS = ["Farm 88", "Oda e Prizrenit"] as const;
 export const TOTAL_OFFER_SPOTS = 10;
 
 export const translations = {
@@ -227,13 +227,60 @@ export const translations = {
         ],
       },
     },
+    odaEPrizrenit: {
+      badge: { en: "RESTAURANT WEBSITE", al: "RESTORANT WEBSITE" },
+      name: { en: "Oda e Prizrenit", al: "Oda e Prizrenit" },
+      nameSuffix: { en: "Restaurant", al: "Restorant" },
+      description: {
+        en: "Traditional Albanian restaurant website featuring luxury dark design, interactive menu system with 90+ dishes, dynamic photo gallery, Google Maps integration, and WhatsApp reservations. Built with Next.js, optimized for SEO with 100/100 score.",
+        al: "Website p\u00ebr restorant tradicional shqiptar me dizajn luksoz t\u00eb err\u00ebt, sistem menuje interaktiv me 90+ pjata, galeri dinamike fotografish, integrimi me Google Maps dhe rezervime p\u00ebrmes WhatsApp. Nd\u00ebrtuar me Next.js, i optimizuar p\u00ebr SEO me rezultat 100/100.",
+      },
+      features: {
+        en: [
+          "SEO score 100/100",
+          "90+ dishes interactive menu",
+          "Dynamic photo gallery",
+          "WhatsApp reservations",
+          "Google Maps integration",
+        ],
+        al: [
+          "Rezultat SEO 100/100",
+          "Meny interaktive me 90+ pjata",
+          "Galeri dinamike fotografish",
+          "Rezervime p\u00ebrmes WhatsApp",
+          "Integrimi me Google Maps",
+        ],
+      },
+      testimonial: {
+        en: "A stunning website that perfectly represents our tradition.",
+        al: "Nj\u00eb website mahniths\u00ebm q\u00eb p\u00ebrfaq\u00ebson n\u00eb m\u00ebnyr\u00eb perfekte tradit\u00ebn ton\u00eb.",
+      },
+      testimonialAuthor: { en: "Owner, Oda e Prizrenit", al: "Pronari, Oda e Prizrenit" },
+      ctaPrimary: { en: "VIEW LIVE WEBSITE", al: "SHIKO LIVE WEBSITE" },
+      ctaSecondary: { en: "Details", al: "Detaje" },
+      techStack: { en: "Tech Stack", al: "Teknologjit\u00eb" },
+      stats: {
+        en: [
+          { value: "90+", label: "Menu dishes" },
+          { value: "100", label: "SEO score" },
+          { value: "2", label: "Weeks delivery" },
+          { value: "100%", label: "Responsive" },
+        ],
+        al: [
+          { value: "90+", label: "Pjata n\u00eb meny" },
+          { value: "100", label: "Rezultat SEO" },
+          { value: "2", label: "Jav\u00eb dor\u00ebzim" },
+          { value: "100%", label: "Responsiv" },
+        ],
+      },
+    },
     placeholder1: {
-      badge: { en: "IN DEVELOPMENT", al: "NË ZHVILLIM" },
-      title: { en: "Another project coming soon", al: "Projekt tjetër së shpejti" },
+      badge: { en: "IN DEVELOPMENT", al: "N\u00cb ZHVILLIM" },
+      title: { en: "Another project coming soon", al: "Projekt tjet\u00ebr s\u00eb shpejti" },
     },
     placeholder2: {
-      badge: { en: "AVAILABLE", al: "DISPONIBËL" },
-      title: { en: "Space for your project", al: "Hapësirë për projektin tuaj" },
+      badge: { en: "AVAILABLE", al: "DISPONIB\u00cbL" },
+      title: { en: "Space for your project", al: "Hap\u00ebsir\u00eb p\u00ebr projektin tuaj" },
     },
     ctaPortfolio: { en: "VIEW FULL PORTFOLIO", al: "SHIKO PORTFOLIO TË PLOTË" },
   },

@@ -18,19 +18,15 @@ function CheckIcon() {
   );
 }
 
-const screenshots = [
-  { src: "/projects/farm88/hero.png", alt: "Restaurant website Albania - modern website design by web developer Tirana Eight Byte Studio", label: "Hero" },
-  { src: "/projects/farm88/menu.png", alt: "Digital menu Albania - restaurant website design with SEO optimization Tirana", label: "Menu" },
-  { src: "/projects/farm88/contact.png", alt: "Small business website Albania - restaurant contact page with Google optimization", label: "Contact" },
-];
+type Screenshot = { src: string; alt: string; label: string };
 
-function ScreenshotShowcase() {
+function ScreenshotShowcase({ screenshots, urlLabel }: { screenshots: Screenshot[]; urlLabel: string }) {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
 
   const next = useCallback(() => {
     setCurrent((prev) => (prev + 1) % screenshots.length);
-  }, []);
+  }, [screenshots.length]);
 
   useEffect(() => {
     if (paused) return;
@@ -59,7 +55,7 @@ function ScreenshotShowcase() {
           <div className="mx-auto flex h-6 w-56 items-center justify-center rounded-lg bg-white/[0.05] px-4">
             <span className="flex items-center gap-1.5 text-[10px] text-white/25">
               <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
-              farm88-restaurant.vercel.app
+              {urlLabel}
             </span>
           </div>
         </div>
@@ -131,7 +127,7 @@ function ScreenshotShowcase() {
             </div>
             {i === current && (
               <motion.div
-                layoutId="activeThumb"
+                layoutId={`activeThumb-${urlLabel}`}
                 className="absolute inset-x-0 bottom-0 h-0.5 bg-gold-400"
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
               />
@@ -142,8 +138,6 @@ function ScreenshotShowcase() {
     </div>
   );
 }
-
-const techStack = ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Vercel"];
 
 function PlaceholderCard({ title, badge }: { title: string; badge: string }) {
   return (
@@ -170,18 +164,40 @@ function PlaceholderCard({ title, badge }: { title: string; badge: string }) {
   );
 }
 
+/* ── Per-project data ── */
+const farm88Screenshots: Screenshot[] = [
+  { src: "/projects/farm88/hero.png", alt: "Restaurant website Albania - modern website design by web developer Tirana Eight Byte Studio", label: "Hero" },
+  { src: "/projects/farm88/menu.png", alt: "Digital menu Albania - restaurant website design with SEO optimization Tirana", label: "Menu" },
+  { src: "/projects/farm88/contact.png", alt: "Small business website Albania - restaurant contact page with Google optimization", label: "Contact" },
+];
+
+const odaScreenshots: Screenshot[] = [
+  { src: "/projects/oda-e-prizrenit/hero.png", alt: "Oda e Prizrenit restaurant website - luxury dark design Albanian traditional restaurant", label: "Hero" },
+  { src: "/projects/oda-e-prizrenit/about.png", alt: "Oda e Prizrenit about section - traditional Albanian cuisine restaurant website", label: "About" },
+  { src: "/projects/oda-e-prizrenit/menu.png", alt: "Oda e Prizrenit interactive menu - 90+ dishes Albanian restaurant website", label: "Menu" },
+];
+
+const farm88TechStack = ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Vercel"];
+const odaTechStack = ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion"];
+
 export default function Projects() {
   const { lang } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
   const featuredRef = useRef<HTMLDivElement>(null);
   const featuredInView = useInView(featuredRef, { once: true, margin: "-60px" });
+  const odaRef = useRef<HTMLDivElement>(null);
+  const odaInView = useInView(odaRef, { once: true, margin: "-60px" });
   const placeholderRef = useRef<HTMLDivElement>(null);
   const placeholderInView = useInView(placeholderRef, { once: true, margin: "-60px" });
 
   const farm = tr.projects.farm88;
-  const features = farm.features[lang];
-  const stats = farm.stats[lang];
+  const farmFeatures = farm.features[lang];
+  const farmStats = farm.stats[lang];
+
+  const oda = tr.projects.odaEPrizrenit;
+  const odaFeatures = oda.features[lang];
+  const odaStats = oda.stats[lang];
 
   return (
     <section ref={sectionRef} id="projektet" className="relative overflow-hidden py-24 lg:py-32">
@@ -213,7 +229,7 @@ export default function Projects() {
             <motion.div variants={fadeUp} className="relative overflow-hidden border-b border-white/[0.06] p-6 sm:p-10 lg:border-b-0 lg:border-r lg:p-12">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_30%_50%,rgba(212,175,55,0.03)_0%,transparent_70%)]" />
               <div className="relative">
-                <ScreenshotShowcase />
+                <ScreenshotShowcase screenshots={farm88Screenshots} urlLabel="farm88-restaurant.vercel.app" />
               </div>
             </motion.div>
 
@@ -234,7 +250,7 @@ export default function Projects() {
 
               {/* Features */}
               <motion.ul variants={fadeUp} className="mt-8 flex flex-col gap-3">
-                {features.map((feature) => (
+                {farmFeatures.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
                     <span className="text-gold-400/70"><CheckIcon /></span>
                     <span className="text-[13px] font-light leading-snug text-white/50">{feature}</span>
@@ -246,7 +262,7 @@ export default function Projects() {
               <motion.div variants={fadeUp} className="mt-8">
                 <p className="text-[10px] font-medium tracking-[0.15em] text-white/20 uppercase">{t(farm.techStack, lang)}</p>
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {techStack.map((tech) => (
+                  {farm88TechStack.map((tech) => (
                     <span key={tech} className="border border-white/[0.08] bg-white/[0.02] px-3 py-1 text-[10px] font-light text-white/30">{tech}</span>
                   ))}
                 </div>
@@ -270,7 +286,80 @@ export default function Projects() {
 
           {/* Stats bar */}
           <motion.div variants={fadeIn} className="grid grid-cols-2 border-t border-white/[0.06] sm:grid-cols-4">
-            {stats.map((stat, i) => (
+            {farmStats.map((stat, i) => (
+              <div key={stat.label} className={`flex flex-col gap-1 px-8 py-6 sm:px-10 ${i < 3 ? "border-b border-r border-white/[0.06] sm:border-b-0" : "border-b border-white/[0.06] sm:border-b-0"}`}>
+                <span className="text-xl font-light text-gold-400/80">{stat.value}</span>
+                <span className="text-[11px] font-light text-white/40">{stat.label}</span>
+              </div>
+            ))}
+          </motion.div>
+        </motion.div>
+
+        {/* ── Oda e Prizrenit Showcase ── */}
+        <motion.div ref={odaRef} initial="hidden" animate={odaInView ? "visible" : "hidden"} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } } }} className="mt-4 overflow-hidden border border-white/[0.06] bg-white/[0.01]">
+          <div className="grid lg:grid-cols-[1.2fr_0.8fr]">
+            {/* Left — Screenshot showcase */}
+            <motion.div variants={fadeUp} className="relative overflow-hidden border-b border-white/[0.06] p-6 sm:p-10 lg:border-b-0 lg:border-r lg:p-12">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_30%_50%,rgba(212,175,55,0.03)_0%,transparent_70%)]" />
+              <div className="relative">
+                <ScreenshotShowcase screenshots={odaScreenshots} urlLabel="odaeprizrenit.al" />
+              </div>
+            </motion.div>
+
+            {/* Right — Details */}
+            <motion.div variants={stagger} className="flex flex-col px-8 py-10 sm:px-12 sm:py-14 lg:px-14">
+              <motion.div variants={fadeUp}>
+                <span className="inline-flex items-center gap-2 border border-gold-400/20 bg-gold-400/[0.06] px-4 py-1.5 text-[10px] font-semibold tracking-[0.2em] text-gold-400/80 uppercase">
+                  <span className="h-1.5 w-1.5 rounded-full bg-gold-400/60" />
+                  {t(oda.badge, lang)}
+                </span>
+              </motion.div>
+              <motion.h3 variants={fadeUp} className="mt-8 text-3xl font-light tracking-[-0.01em] text-white sm:text-4xl">
+                {t(oda.name, lang)}{" "}<span className="text-white/30">{t(oda.nameSuffix, lang)}</span>
+              </motion.h3>
+              <motion.p variants={fadeUp} className="mt-5 text-[14px] font-light leading-[1.8] text-white/40">{t(oda.description, lang)}</motion.p>
+
+              <motion.div variants={fadeIn} className="mt-8"><div className="h-[1px] w-full bg-white/[0.06]" /></motion.div>
+
+              {/* Features */}
+              <motion.ul variants={fadeUp} className="mt-8 flex flex-col gap-3">
+                {odaFeatures.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3">
+                    <span className="text-gold-400/70"><CheckIcon /></span>
+                    <span className="text-[13px] font-light leading-snug text-white/50">{feature}</span>
+                  </li>
+                ))}
+              </motion.ul>
+
+              {/* Tech stack */}
+              <motion.div variants={fadeUp} className="mt-8">
+                <p className="text-[10px] font-medium tracking-[0.15em] text-white/20 uppercase">{t(oda.techStack, lang)}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {odaTechStack.map((tech) => (
+                    <span key={tech} className="border border-white/[0.08] bg-white/[0.02] px-3 py-1 text-[10px] font-light text-white/30">{tech}</span>
+                  ))}
+                </div>
+              </motion.div>
+
+              <div className="flex-1" />
+
+              {/* CTA Buttons */}
+              <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
+                <a href="https://odaeprizrenit.al" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2.5 bg-gold-400 px-7 py-3.5 text-[11px] font-semibold tracking-[0.12em] text-navy-950 uppercase transition-all duration-300 hover:bg-gold-300 hover:shadow-lg hover:shadow-gold-400/20">
+                  {t(oda.ctaPrimary, lang)}
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-0.5"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
+                </a>
+                <a href="#kontakti" className="group inline-flex items-center gap-2.5 border border-white/[0.1] px-7 py-3.5 text-[11px] font-light tracking-[0.1em] text-white/40 uppercase transition-all duration-300 hover:border-white/20 hover:text-white/70">
+                  {t(oda.ctaSecondary, lang)}
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-0.5"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+                </a>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Stats bar */}
+          <motion.div variants={fadeIn} className="grid grid-cols-2 border-t border-white/[0.06] sm:grid-cols-4">
+            {odaStats.map((stat, i) => (
               <div key={stat.label} className={`flex flex-col gap-1 px-8 py-6 sm:px-10 ${i < 3 ? "border-b border-r border-white/[0.06] sm:border-b-0" : "border-b border-white/[0.06] sm:border-b-0"}`}>
                 <span className="text-xl font-light text-gold-400/80">{stat.value}</span>
                 <span className="text-[11px] font-light text-white/40">{stat.label}</span>
