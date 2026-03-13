@@ -43,6 +43,14 @@ function IconDiamond() {
   );
 }
 
+function IconPhone() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+      <rect width="14" height="20" x="5" y="2" rx="2" ry="2" /><path d="M12 18h.01" />
+    </svg>
+  );
+}
+
 function CheckIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-0.5">
@@ -192,6 +200,18 @@ export default function Services() {
       buttonLabel: t(tr.services.card3.button, lang),
       buttonHref: "#kontakti",
     },
+    {
+      icon: <IconPhone />,
+      badges: [t(tr.services.card4.badge, lang)],
+      badgeType: "offer",
+      title: t(tr.services.card4.title, lang),
+      description: t(tr.services.card4.description, lang),
+      features: tr.services.card4.features[lang],
+      oldPrice: t(tr.services.card4.oldPrice, lang),
+      price: t(tr.services.card4.price, lang),
+      buttonLabel: t(tr.services.card4.button, lang),
+      buttonHref: "#kontakti",
+    },
   ];
 
   return (
@@ -249,7 +269,7 @@ export default function Services() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12, delayChildren: 0.3 } } }}
-          className="mt-6 grid items-start gap-4 lg:grid-cols-3"
+          className="mt-6 grid items-start gap-4 md:grid-cols-2 lg:grid-cols-4"
         >
           {cards.map((card) => (
             <Card key={card.title} card={card} />

@@ -46,8 +46,8 @@ export const translations = {
       badge: { en: "LIMITED OFFER", al: "OFERT\u00cb E KUFIZUAR" },
       title: { en: "Starter Website", al: "Website Starter" },
       description: {
-        en: "Professional web design for small businesses in Albania. Get your business online with a modern, Google-optimized website — fast and affordable.",
-        al: "Dizajn profesional web p\u00ebr biznese t\u00eb vogla n\u00eb Shqip\u00ebri. Shtini biznesin tuaj online me nj\u00eb website modern, t\u00eb optimizuar p\u00ebr Google — shpejt dhe me \u00e7mim t\u00eb aksesuesh\u00ebm.",
+        en: "Perfect for small businesses in Albania that need a professional online presence fast. Modern, mobile-friendly, and Google-optimized \u2014 at a price that makes sense.",
+        al: "Perfekte p\u00ebr biznese t\u00eb vogla n\u00eb Shqip\u00ebri q\u00eb kan\u00eb nevoj\u00eb p\u00ebr nj\u00eb prezenc\u00eb profesionale online shpejt. Moderne, e p\u00ebrshtatshme p\u00ebr celular, dhe e optimizuar p\u00ebr Google \u2014 me nj\u00eb \u00e7mim q\u00eb ka kuptim.",
       },
       features: {
         en: [
@@ -63,8 +63,8 @@ export const translations = {
           "1 jav\u00eb dor\u00ebzim",
         ],
       },
-      oldPrice: { en: "800\u20ac", al: "800\u20ac" },
-      price: { en: "500\u20ac", al: "500\u20ac" },
+      oldPrice: { en: "500\u20ac", al: "500\u20ac" },
+      price: { en: "300\u20ac", al: "300\u20ac" },
       button: { en: "Learn More", al: "M\u00ebso M\u00eb Shum\u00eb" },
     },
     card2: {
@@ -72,8 +72,8 @@ export const translations = {
       badge2: { en: "OFFER 20% OFF", al: "OFERT\u00cb 20% ZBRITJE" },
       title: { en: "Professional Website + SEO", al: "Website Profesional + SEO" },
       description: {
-        en: "Complete website solution for businesses in Tirana and across Albania. Rank higher on Google and attract more customers with advanced SEO and a fully custom website.",
-        al: "Zgjidhje e plot\u00eb website p\u00ebr biznese n\u00eb Tiran\u00eb dhe n\u00eb t\u00eb gjith\u00eb Shqip\u00ebrin\u00eb. Rendituni m\u00eb lart n\u00eb Google dhe terhiqni m\u00eb shum\u00eb klient\u00eb me SEO t\u00eb avancuar dhe nj\u00eb website plot\u00ebsisht t\u00eb personalizuar.",
+        en: "The complete website solution for Albanian businesses serious about growth. Rank higher on Google, attract more customers, and stand out from competitors with a fully custom site.",
+        al: "Zgjidhja e plot\u00eb e website-it p\u00ebr biznese shqiptare q\u00eb jan\u00eb serioz\u00eb p\u00ebr rritje. Rendituni m\u00eb lart n\u00eb Google, terhiqni m\u00eb shum\u00eb klient\u00eb, dhe dallohuni nga konkurrent\u00ebt me nj\u00eb faqe plot\u00ebsisht t\u00eb personalizuar.",
       },
       features: {
         en: [
@@ -95,16 +95,16 @@ export const translations = {
           "2 jav\u00eb dor\u00ebzim",
         ],
       },
-      oldPrice: { en: "1,000\u20ac", al: "1,000\u20ac" },
-      price: { en: "800\u20ac", al: "800\u20ac" },
+      oldPrice: { en: "800\u20ac", al: "800\u20ac" },
+      price: { en: "500\u20ac", al: "500\u20ac" },
       button: { en: "See Example", al: "Shiko Shembull" },
     },
     card3: {
       badge: { en: "PREMIUM OFFER", al: "OFERT\u00cb PREMIUM" },
       title: { en: "Premium + SEO & E-Commerce", al: "Premium + SEO & E-Commerce" },
       description: {
-        en: "The complete digital package for Albanian businesses ready to scale. Professional website, monthly SEO, and a full online store — so your customers can find you and buy from you, 24/7.",
-        al: "Paketa e plot\u00eb digjitale p\u00ebr biznese shqiptare gati p\u00ebr t\u2019u rritur. Website profesional, SEO mujor, dhe dyqan online i plot\u00eb — q\u00eb klient\u00ebt tuaj t\u2019ju gjejn\u00eb dhe t\u00eb blejn\u00eb nga ju, 24/7.",
+        en: "The ultimate digital package for Albanian businesses ready to scale. A premium website, full online store, monthly SEO, and everything you need to get found online and sell 24/7.",
+        al: "Paketa supreme digjitale p\u00ebr biznese shqiptare gati p\u00ebr t\u2019u rritur. Website premium, dyqan online i plot\u00eb, SEO mujor, dhe gjith\u00e7ka q\u00eb ju nevojitet p\u00ebr t\u2019u gjetur online dhe shitur 24/7.",
       },
       features: {
         en: [
@@ -128,9 +128,36 @@ export const translations = {
           "3 jav\u00eb dor\u00ebzim",
         ],
       },
-      oldPrice: { en: "1,300\u20ac", al: "1,300\u20ac" },
-      price: { en: "1,000\u20ac", al: "1,000\u20ac" },
+      oldPrice: { en: "1,000\u20ac", al: "1,000\u20ac" },
+      price: { en: "800\u20ac", al: "800\u20ac" },
       priceNote: { en: "+ 50\u20ac/month", al: "+ 50\u20ac/muaj" },
+      button: { en: "Contact Us", al: "Kontakto" },
+    },
+    card4: {
+      badge: { en: "NEW", al: "E RE" },
+      title: { en: "App Development", al: "Zhvillim Aplikacioni" },
+      description: {
+        en: "Turn your business idea into a real mobile app, available on both the App Store and Google Play. Custom-built for Albanian businesses looking to reach customers directly on their phones.",
+        al: "Ktheni iden\u00eb tuaj t\u00eb biznesit n\u00eb nj\u00eb aplikacion real celulari, i disponuesh\u00ebm n\u00eb App Store dhe Google Play. I nd\u00ebrtuar p\u00ebr biznese shqiptare q\u00eb d\u00ebshirojn\u00eb t\u00eb arrijn\u00eb klient\u00ebt direkt n\u00eb telefonin e tyre.",
+      },
+      features: {
+        en: [
+          "Custom mobile app design",
+          "iOS & Android (App Store & Google Play)",
+          "Push notifications",
+          "Admin dashboard",
+          "4 weeks delivery",
+        ],
+        al: [
+          "Dizajn i personalizuar aplikacioni",
+          "iOS & Android (App Store & Google Play)",
+          "Njoftime push",
+          "Panel administrimi",
+          "4 jav\u00eb dor\u00ebzim",
+        ],
+      },
+      oldPrice: { en: "2,500\u20ac", al: "2,500\u20ac" },
+      price: { en: "2,000\u20ac", al: "2,000\u20ac" },
       button: { en: "Contact Us", al: "Kontakto" },
     },
   },
