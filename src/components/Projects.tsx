@@ -229,7 +229,7 @@ export default function Projects() {
             <motion.div variants={fadeUp} className="relative overflow-hidden border-b border-white/[0.06] p-6 sm:p-10 lg:border-b-0 lg:border-r lg:p-12">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_30%_50%,rgba(212,175,55,0.03)_0%,transparent_70%)]" />
               <div className="relative">
-                <ScreenshotShowcase screenshots={farm88Screenshots} urlLabel="farm88-restaurant.vercel.app" />
+                <ScreenshotShowcase screenshots={farm88Screenshots} urlLabel="farm88.al" />
               </div>
             </motion.div>
 
@@ -272,7 +272,7 @@ export default function Projects() {
 
               {/* CTA Buttons */}
               <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
-                <a href="https://farm88-restaurant.vercel.app" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2.5 bg-gold-400 px-7 py-3.5 text-[11px] font-semibold tracking-[0.12em] text-navy-950 uppercase transition-all duration-300 hover:bg-gold-300 hover:shadow-lg hover:shadow-gold-400/20">
+                <a href="https://farm88.al" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2.5 bg-gold-400 px-7 py-3.5 text-[11px] font-semibold tracking-[0.12em] text-navy-950 uppercase transition-all duration-300 hover:bg-gold-300 hover:shadow-lg hover:shadow-gold-400/20">
                   {t(farm.ctaPrimary, lang)}
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-0.5"><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
                 </a>
