@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations as tr, t, COMPLETED_PROJECTS, TOTAL_OFFER_SPOTS } from "@/lib/translations";
@@ -74,7 +74,14 @@ interface CardData {
   featured?: boolean;
 }
 
+const VISIBLE_FEATURES = 5;
+
 function Card({ card }: { card: CardData }) {
+  const { lang } = useLanguage();
+  const [expanded, setExpanded] = useState(false);
+  const hasMore = card.features.length > VISIBLE_FEATURES;
+  const visibleFeatures = expanded ? card.features : card.features.slice(0, VISIBLE_FEATURES);
+
   return (
     <motion.div
       variants={fadeUp}
@@ -114,13 +121,37 @@ function Card({ card }: { card: CardData }) {
         <p className="mt-3 text-[14px] font-light leading-relaxed text-white/35">{card.description}</p>
         <div className="mt-8 h-[1px] w-full bg-white/[0.06]" />
         <ul className="mt-8 flex flex-col gap-4">
-          {card.features.map((feature) => (
+          {visibleFeatures.map((feature) => (
             <li key={feature} className="flex items-start gap-3">
               <span className={card.featured ? "text-gold-400/70" : "text-white/20"}><CheckIcon /></span>
               <span className="text-[13px] font-light leading-snug text-white/50">{feature}</span>
             </li>
           ))}
         </ul>
+        {hasMore && (
+          <button
+            type="button"
+            onClick={() => setExpanded(!expanded)}
+            className="mt-4 flex items-center gap-1.5 text-[12px] font-medium tracking-[0.05em] text-gold-400/70 transition-colors duration-200 hover:text-gold-400"
+          >
+            {expanded
+              ? lang === "en" ? "View Less" : "Shiko M\u00eb Pak"
+              : lang === "en" ? `View More (+${card.features.length - VISIBLE_FEATURES})` : `Shiko M\u00eb Shum\u00eb (+${card.features.length - VISIBLE_FEATURES})`}
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className={`transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+        )}
         <div className="flex-1" />
 
         {/* Pricing */}
@@ -269,7 +300,7 @@ export default function Services() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12, delayChildren: 0.3 } } }}
-          className="mt-6 grid items-start gap-4 md:grid-cols-2 lg:grid-cols-4"
+          className="mt-6 grid items-stretch gap-4 md:grid-cols-2 lg:grid-cols-4"
         >
           {cards.map((card) => (
             <Card key={card.title} card={card} />
